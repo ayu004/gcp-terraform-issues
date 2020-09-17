@@ -19,7 +19,7 @@ resource "google_project_service" "project" {
 }
 
 resource "google_app_engine_application" "app" {
-  depends_on = [google_app_engine_application.project]
+  depends_on = [google_project_service.project]
   	
   project = var.project
   location_id = var.appengineLocation
